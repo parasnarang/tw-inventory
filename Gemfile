@@ -26,7 +26,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Mongodb
-gem 'mongoid'
+gem 'mongoid', '~> 4.0.0.beta1', github: 'mongoid/mongoid'
 gem 'bson_ext'
 
 group :doc do
