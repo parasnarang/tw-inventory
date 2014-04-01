@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter RubyCAS::Filter
   append_before_filter :authenticate
-  append_before_filter :authorize!, :except => :logout, :except => :employee_dashboard
+  append_before_filter :authorize!, :except => [:logout, :employee_dashboard]
   #helper_method :current_user
 
   def logout
