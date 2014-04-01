@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+laptop = AssetType.create(:properties => [:serial, :asset_id, :procurement_id, :ram, :mac_address, :os, :processor], :name => 'Laptop')

@@ -6,6 +6,7 @@ gem 'rails', '4.0.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+gem 'bootstrap-sass'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -35,10 +36,14 @@ gem 'rubycas-client-rails'
 
 gem 'haml-rails'
 
+gem 'pry'
+
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
 end
 
 group :doc do

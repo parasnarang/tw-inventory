@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   #helper_method :current_user
 
   def root
-    puts "Honey, I'm home!"
     #redirect_to dashboard_path
+    render :root
   end
 
   def logout

@@ -7,28 +7,20 @@
     = csrf_meta_tags
   %body.default-theme
     #notifications
-    - unless Rails.env.production?
-      #current_role{style: 'position: absolute; right: 0; top: 10px;'}
-        .label.label-important
-          = 'Current Role'
-          = 'Admin'
-        %br
-        %br
-        = link_to 'Toggle', '', method: :post, class: 'btn btn-warn'
 
     .container
       .navbar
         .navbar-inner
           = link_to 'TW Inventory', root_path, class: 'brand'
-          - if current_user.admin?
+          -#- if current_user.admin?
             %ul.nav
               %li
                 = link_to 'Asset Types', ''
               %li
                 = link_to 'Assets', ''
 
-          %a#logout.pull-right.btn{href: logout_path}
-            %span.icon-off
+        %a#logout.pull-right.btn{href: logout_path}
+          ='Logout'
 
-      = yield
+    = yield
 
