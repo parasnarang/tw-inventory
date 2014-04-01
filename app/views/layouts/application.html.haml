@@ -1,0 +1,34 @@
+!!!
+%html
+  %head
+    %title= yield :title || 'Inventory'
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body.default-theme
+    #notifications
+    - unless Rails.env.production?
+      #current_role{style: 'position: absolute; right: 0; top: 10px;'}
+        .label.label-important
+          = 'Current Role'
+          = 'Admin'
+        %br
+        %br
+        = link_to 'Toggle', '', method: :post, class: 'btn btn-warn'
+
+    .container
+      .navbar
+        .navbar-inner
+          = link_to 'TW Inventory', root_path, class: 'brand'
+          - if current_user.admin?
+            %ul.nav
+              %li
+                = link_to 'Asset Types', ''
+              %li
+                = link_to 'Assets', ''
+
+          %a#logout.pull-right.btn{href: logout_path}
+            %span.icon-off
+
+      = yield
+

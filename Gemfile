@@ -29,6 +29,12 @@ gem 'jbuilder', '~> 1.2'
 gem 'mongoid', '~> 4.0.0.beta1', github: 'mongoid/mongoid'
 gem 'bson_ext'
 
+# CAS login
+gem 'rubycas-client', '2.2.1'
+gem 'rubycas-client-rails'
+
+gem 'haml-rails'
+
 group :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
