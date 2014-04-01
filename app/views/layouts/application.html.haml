@@ -6,21 +6,19 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body.default-theme
-    #notifications
-
-    .container
-      .navbar
-        .navbar-inner
-          = link_to 'TW Inventory', root_path, class: 'brand'
-          -#- if current_user.admin?
-            %ul.nav
+    .container-fluid
+      .navbar.navbar-default
+        .navbar-header
+          = link_to 'TW Inventory', root_path, class: 'navbar-brand'
+          - if true || current_user.admin?
+            %ul.nav.navbar-nav
               %li
                 = link_to 'Asset Types', ''
               %li
                 = link_to 'Assets', ''
 
         %a#logout.pull-right.btn{href: logout_path}
-          ='Logout'
+          %span.icon-off
 
-    = yield
+      = yield
 

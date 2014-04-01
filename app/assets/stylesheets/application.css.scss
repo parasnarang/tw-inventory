@@ -11,3 +11,62 @@
  *= require_self
  *= require_tree .
  */
+@import 'bootstrap';
+@import 'font-awesome';
+
+table {
+  margin-top: 20px;
+}
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1200px;
+}
+
+.navbar-inner {
+  padding: 10px 0 10px 0;
+}
+
+[data-url] {
+  cursor: pointer;
+}
+
+body {
+  padding-top: 30px;
+
+  #notifications {
+    position: absolute;
+    z-index: 9;
+
+    .notification-container {
+      z-index: inherit;
+    }
+  }
+}
+
+#logout {
+  color: #aaa;
+  font-size: 20px;
+  border-radius: 20px;
+
+  &:hover {
+    color: #E98;
+  }
+}
+
+.hero-unit {
+  padding: 50px 50px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  color: inherit;
+  background-color: #eeeeee;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+#search_assets_form {
+  margin-right: 30px;
+}
