@@ -6,4 +6,9 @@ describe ApplicationController do
     @admin = FactoryGirl.create(:user)
     RubyCAS::Filter.fake('homer')
   end
+
+  it 'should call CAS logout function for Logout action' do
+    get :logout
+    response.should redirect_to('https://cas.thoughtworks.com/cas/logout')
+  end
 end
