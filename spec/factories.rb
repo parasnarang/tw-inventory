@@ -1,6 +1,6 @@
 FactoryGirl.define do
 
-  factory :admin do
+  factory :user do
     ad_id "parasnar"
     name "Paras Narang"
   end

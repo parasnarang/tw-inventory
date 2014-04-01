@@ -3,9 +3,11 @@ TwInventory::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-  root 'application#root'
+  root 'users#admin_dashboard'
   get 'logout' => 'application#logout'
+
+  get 'employee_dashboard' => 'users#employee_dashboard'#, :as => 'employee_dashboard_path'
+  get 'admin_dashboard' => 'users#admin_dashboard'
 
 
   # Example of regular route:
@@ -51,9 +53,9 @@ TwInventory::Application.routes.draw do
   #   resources :photos, concerns: :toggleable
 
   # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
+  #   namespace :users do
+  #     # Directs /users/products/* to User::ProductsController
+  #     # (app/controllers/users/products_controller.rb)
   #     resources :products
   #   end
 end

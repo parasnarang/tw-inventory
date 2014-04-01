@@ -2,15 +2,10 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  before_filter RubyCAS::Filter
-  #append_before_filter :authenticate
-  #append_before_filter :authorize!
+  before_filter RubyCAS::Filter, :except => :logout, :except => :employee_dashboard
+  append_before_filter :authenticate, :except => :logout, :except => :employee_dashboard
+  append_before_filter :authorize!, :except => :logout, :except => :employee_dashboard
   #helper_method :current_user
-
-  def root
-    #redirect_to dashboard_path
-    render :root
-  end
 
   def logout
     RubyCAS::Filter.logout self
@@ -18,14 +13,15 @@ class ApplicationController < ActionController::Base
 
   private
   def authenticate
-    #@current_user = Employee.find_by_ad_id( session[:cas_user])
+    #@current_user = User.where(:ad_id => session[:cas_user]).first
+    @current_username = session[:cas_user]
   end
 
   def authorize!
-    #redirect_to employee_dashboard_path and return false unless current_user.admin?
+    redirect_to employee_dashboard_path and return false unless User.admin?(@current_username)
   end
 
-  def current_user
-    #@current_user
-  end
+  #def current_username
+  #  @current_username
+  #end
 end

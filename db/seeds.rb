@@ -7,4 +7,5 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+User.create(ad_id: 'parasnar', name: 'Paras Narang', role: 'Admin')
 laptop = AssetType.create(:properties => [:serial, :asset_id, :procurement_id, :ram, :mac_address, :os, :processor], :name => 'Laptop')
