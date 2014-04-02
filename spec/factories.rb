@@ -13,4 +13,7 @@ FactoryGirl.define do
   factory :asset do
   end
 
+  factory :assignment do
+  end
+
 end

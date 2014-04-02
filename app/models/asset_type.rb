@@ -11,6 +11,6 @@ class AssetType
   embeds_many :assets
 
   def unassigned_asset_count
-    self.assets.count
+    self.assets.select{|a| a.unassigned?}.count
   end
 end
