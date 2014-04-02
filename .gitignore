@@ -17,6 +17,3 @@
 
 # Ignore RubyMine files
 /.idea
-
-# Coverage report files
-/coverage

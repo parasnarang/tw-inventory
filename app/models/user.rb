@@ -1,6 +1,9 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+
+  ADMIN = "Admin"
+
   field :ad_id, type: String
   field :name, type: String
   field :role, type: String
@@ -8,7 +11,7 @@ class User
   validates_presence_of :ad_id
   validates_presence_of :name
 
-  ADMIN = "Admin"
+  embeds_many :assignments
 
   def self.admin?(ad_id)
     u = User.where(:ad_id => ad_id)

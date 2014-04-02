@@ -10,4 +10,7 @@ FactoryGirl.define do
     name "Keyboard"
   end
 
+  factory :asset do
+  end
+
 end

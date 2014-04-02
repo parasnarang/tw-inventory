@@ -9,4 +9,8 @@ class AssetType
   validates_presence_of :name
 
   embeds_many :assets
+
+  def unassigned_asset_count
+    self.assets.count
+  end
 end
