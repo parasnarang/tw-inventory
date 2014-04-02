@@ -13,4 +13,8 @@ class AssetType
   def unassigned_asset_count
     self.assets.select{|a| a.unassigned?}.count
   end
+
+  def total_asset_count
+    assets.count
+  end
 end

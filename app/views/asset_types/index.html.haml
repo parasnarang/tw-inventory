@@ -1,0 +1,22 @@
+%table#asset_types-table.table.table-bordered
+  %caption Asset Type List
+  %thead
+    %tr.heading
+      %th S.No
+      %th Name
+      %th Total Assets
+      %th Unassigned Assets
+      %th Action
+  %tbody
+    - @all_types.each_with_index do |asset_type, index|
+      %tr{ id: asset_type.id }
+        %td.sno
+          = index
+        %td.name
+          = asset_type.name
+        %td.total_assets
+          = asset_type.total_asset_count
+        %td.unassigned_assets
+          = asset_type.unassigned_asset_count
+        %td.action
+          = link_to 'Add Asset', new_asset_type_asset_path(asset_type), class: 'btn'

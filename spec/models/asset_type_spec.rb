@@ -30,4 +30,19 @@ describe AssetType do
       @at.unassigned_asset_count.should == 0
     end
   end
+
+  context :total_asset_count do
+    before do
+      @at = FactoryGirl.create(:asset_type)
+      @non_admin = FactoryGirl.create(:user)
+      @asset1 = FactoryGirl.create(:asset, :asset_type => @at)
+      @asset2 = FactoryGirl.create(:asset, :asset_type => @at)
+    end
+
+    it "should return total num of assets" do
+     FactoryGirl.create(:assignment, :asset => @asset1, :user => @non_admin, :start_date => 1.month.ago.to_date, :end_date => 1.month.from_now.to_date)
+     @at.total_asset_count.should == 2
+    end
+
+  end
 end

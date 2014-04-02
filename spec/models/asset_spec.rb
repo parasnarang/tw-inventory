@@ -33,4 +33,8 @@ describe Asset do
     end
   end
 
+  it "should return array of properties associated with asset type" do
+    @asset.properties.should =~ [:asset_id, :serial]
+  end
+
 end

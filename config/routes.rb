@@ -8,7 +8,9 @@ TwInventory::Application.routes.draw do
 
   get 'employee_dashboard' => 'users#employee_dashboard'#, :as => 'employee_dashboard_path'
   get 'admin_dashboard' => 'users#admin_dashboard'
-
+  resources :asset_types do
+    resources :assets
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

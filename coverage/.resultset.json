@@ -18,14 +18,59 @@
         1,
         1,
         null,
-        3,
+        4,
         null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/Isha/Projects/tw-inventory/spec/controllers/asset_types_controller_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Isha/Projects/tw-inventory/app/controllers/asset_types_controller.rb": [
+        1,
         null,
         1,
         1,
         null,
         null,
+        null
+      ],
+      "/Users/Isha/Projects/tw-inventory/spec/controllers/assets_controller_spec.rb": [
+        1,
         null,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/Isha/Projects/tw-inventory/app/controllers/assets_controller.rb": [
+        1,
+        null,
+        1,
         null,
         null,
         null
@@ -148,6 +193,20 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/Isha/Projects/tw-inventory/app/models/asset_type.rb": [
@@ -165,6 +224,10 @@
         null,
         1,
         6,
+        null,
+        null,
+        1,
+        1,
         null,
         null
       ],
@@ -262,9 +325,9 @@
         1,
         null,
         1,
+        4,
+        4,
         3,
-        3,
-        2,
         null,
         1,
         null,
@@ -272,6 +335,6 @@
         null
       ]
     },
-    "timestamp": 1396433328
+    "timestamp": 1396438403
   }
 }
