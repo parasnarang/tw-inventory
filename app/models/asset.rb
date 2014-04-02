@@ -2,6 +2,6 @@ class Asset
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  belongs_to :asset_type
+  embedded_in :asset_type
 
 end
