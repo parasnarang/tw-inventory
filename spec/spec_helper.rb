@@ -5,6 +5,8 @@ require 'rspec/rails'
 require 'rspec/autorun'
 
 require 'coveralls'
+require 'factory_girl'
+require 'shoulda-matchers'
 Coveralls.wear!
 
 # Requires supporting ruby files with custom matchers and macros, etc,

@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'factory_girl'
 
 describe User do
   it {should validate_presence_of(:name)}

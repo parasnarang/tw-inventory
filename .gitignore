@@ -19,4 +19,4 @@
 /.idea
 
 # Coverage report files
-coverage/*
+/coverage
