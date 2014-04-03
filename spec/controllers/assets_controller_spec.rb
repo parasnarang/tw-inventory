@@ -31,6 +31,20 @@ describe AssetsController do
       get :create, :asset_type_id => @at.id, :asset => {:properties => {:serial => '111222', :ram => '2gb',:processor => ""}}
       response.should redirect_to(asset_types_path)
     end
+
+    it "should render new form if asset save fails" do
+      Asset.any_instance.should_receive(:save).and_return(false)
+      get :create, :asset_type_id => @at.id, :asset => {:properties => {:serial => '111222', :ram => '2gb',:processor => ""}}
+      response.should render_template(:new)
+    end
+  end
+
+  context :index do
+    it "should render list of all assets" do
+      Asset.should_receive(:all).and_call_original
+      get :index
+      response.should render_template(:index)
+    end
   end
 
 end
