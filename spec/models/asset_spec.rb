@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 describe Asset do
-  it { should be_embedded_in(:asset_type) }
-  it { should be_embedded_in(:asset_type) }
-  it { should embed_many(:assignments)}
+  it { should belong_to(:asset_type) }
+  it { should belong_to(:asset_type) }
+  it { should have_many(:assignments)}
 
   before do
     @non_admin = FactoryGirl.create(:user)

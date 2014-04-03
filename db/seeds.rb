@@ -8,7 +8,7 @@
 
 
 User.create(ad_id: 'parasnar', name: 'Paras Narang', role: 'Admin')
-laptop = AssetType.create(:properties => [:serial, :asset_id, :procurement_date, :ram, :mac_address, :os, :processor], :name => 'Laptop', image: 'macbook-pro-15_250x250.jpg')
-keyboard = AssetType.create(:properties => [:serial, :asset_id, :procurement_date], :name => 'Keyboard', image: 'Keyboard_250x250.png')
-mouse = AssetType.create(:properties => [:serial, :asset_id, :procurement_date], :name => 'Mouse', image: 'mouse_250x250.jpg')
-monitor = AssetType.create(:properties => [:serial, :asset_id, :procurement_date], :name => 'Monitor', image: 'monitor_250x250.jpg')
+laptop = AssetType.create(:properties => [:serial, :procurement_date, :ram, :mac_address, :os, :processor], :name => 'Laptop', image: 'macbook-pro-15_250x250.jpg')
+keyboard = AssetType.create(:properties => [:serial, :procurement_date], :name => 'Keyboard', image: 'Keyboard_250x250.png')
+mouse = AssetType.create(:properties => [:serial, :procurement_date], :name => 'Mouse', image: 'mouse_250x250.jpg')
+monitor = AssetType.create(:properties => [:serial, :procurement_date], :name => 'Monitor', image: 'monitor_250x250.jpg')

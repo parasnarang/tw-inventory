@@ -3,8 +3,8 @@ class Assignment
   field :start_date,:type => Date
   field :end_date,:type => Date
 
-  embedded_in :user
-  embedded_in :asset
+  belongs_to :user
+  belongs_to :asset
 
   validates_presence_of :user
   validates_presence_of :asset

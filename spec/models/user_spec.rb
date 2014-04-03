@@ -3,7 +3,7 @@ require 'spec_helper'
 describe User do
   it {should validate_presence_of(:name)}
   it {should validate_presence_of(:ad_id)}
-  it { should embed_many(:assignments)}
+  it { should have_many(:assignments)}
 
   context :admin do
     before do

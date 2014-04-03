@@ -11,7 +11,7 @@ class User
   validates_presence_of :ad_id
   validates_presence_of :name
 
-  embeds_many :assignments
+  has_many :assignments
 
   def self.admin?(ad_id)
     u = User.where(:ad_id => ad_id)

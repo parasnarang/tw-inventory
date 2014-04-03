@@ -4,7 +4,7 @@ describe AssetType do
 
   it {should validate_presence_of(:properties)}
   it {should validate_presence_of(:name)}
-  it {should embed_many(:assets)}
+  it {should have_many(:assets)}
 
   it "should insert timestamps on create" do
     at = FactoryGirl.create(:asset_type)

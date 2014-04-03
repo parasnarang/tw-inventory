@@ -8,7 +8,7 @@ class AssetType
   validates_presence_of :properties
   validates_presence_of :name
 
-  embeds_many :assets
+  has_many :assets
 
   def unassigned_asset_count
     self.assets.select{|a| a.unassigned?}.count
