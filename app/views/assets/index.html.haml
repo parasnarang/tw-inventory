@@ -16,7 +16,7 @@
           %td.type{'data-url' => asset_path(asset) }
             = asset.asset_type.name
           %td.asset_id{'data-url' => asset_path(asset) }
-            = asset.id
+            = asset["asset_id"]
           %td.serial{'data-url' => asset_path(asset) }
             = asset["serial"]
           %td.company{'data-url' => asset_path(asset) }

@@ -7,7 +7,7 @@
     = csrf_meta_tags
   %body.default-theme
     .container-fluid
-      .navbar.navbar-default
+      .navbar.navbar-default{role: 'navigation'}
         .navbar-header
           = link_to 'TW Inventory', root_path, class: 'navbar-brand'
           - if true || current_user.admin?
