@@ -10,8 +10,8 @@
  *
  *= require_self
  *= require_tree .
+ *= require bootstrap
  */
-@import 'bootstrap';
 @import 'font-awesome';
 
 table {
@@ -24,8 +24,8 @@ table {
   max-width: 1200px;
 }
 
-.navbar-inner {
-  padding: 10px 0 10px 0;
+.navbar {
+  padding: 10px 10px 0 0;
 }
 
 [data-url] {
@@ -55,6 +55,7 @@ body {
   }
 }
 
+/*jumbotron */
 .hero-unit {
   padding: 50px 50px;
   font-size: 18px;

@@ -2,34 +2,45 @@
   -#- @assets = Asset.with_warranty_less_than_3_months
   -#- @assets = Asset.all
   - if true #@assets.present?
-    #warranty_pending_assets.hero-unit.dashboard
+    #warranty_pending_assets.jumbotron.dashboard
       .title
         Assets With warranty expiring in less than 3 Months
       #warranty_pending_assets_list
         -#= render :partial => 'assets/asset_table'
 
-  #asset_details.hero-unit.tiles-container
-    %label.hero-end.btn-link.view-more-link{for: 'view-more'} View More
+  #asset_details.jumbotron.tiles-container
+    %label.label-default.hero-end.btn-link.view-more-link{for: 'view-more'} View More
     %ul.assets-tiles.thumbnails
       - AssetType.all.each do |asset_type|
         - asset_unassigned_count = asset_type.unassigned_asset_count
-        %li.tile.text-center
+        %li.tile.text-center.col-sm-6.col-md-4
           .thumbnail
-            .flip.icon-info-sign
+            .flip.glyphicon.glyphicon-info-sign
             .card
               .front.face
                 - if asset_unassigned_count > 0
-                  %label.text-center.alert-success.asset-label{'data-url' => assets_path(asset_type_id: asset_type.id, assignment: :unassigned)}
+                  %label.label-default.text-center.alert-success.asset-label{'data-url' => assets_path(asset_type_id: asset_type.id, assignment: :unassigned)}
                     0
                     = "Available [#{asset_unassigned_count}]"
                 - else
-                  %label.text-center.alert-error.asset-label Not Available
+                  %label.label-default.text-center.alert-danger.asset-label Not Available
                 -#-require 'pry'; binding.pry
                 %img.asset-image{src: asset_type.image}
               .back.face
                 -#= pie_chart asset_type.statistics
 
             .asset-name
-              -#= "#{asset_type.name} [#{asset_type.total_asset_count}]"
+              = "#{asset_type.name} [#{asset_type.total_asset_count}]"
 
-            -#%button.btn.btn-block{'data-url' => assets_path(asset_type_id: asset_type.id)} View All
+            %button.btn.btn-block.btn-default{'data-url' => assets_path(asset_type_id: asset_type.id)} View All
+
+  .bs-example
+    .row
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: '#'}
+
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: '#'}
+
+      .col-xs-6.col-md-3
+        %a.thumbnail{href: '#'}

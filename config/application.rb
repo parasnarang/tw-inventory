@@ -25,6 +25,8 @@ module TwInventory
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
+    # For fonts
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
     # Ruby cas server config
     config.rubycas.cas_base_url = 'https://cas.thoughtworks.com/cas/'
     config.rubycas.logger = Rails.logger

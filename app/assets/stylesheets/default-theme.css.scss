@@ -3,7 +3,7 @@
 .default-theme {
   background-image: url('/images/pw_pattern.png');
 
-  .navbar-inner {
+  .navbar {
     @include gradient(#eee, #bbb);
   }
 }

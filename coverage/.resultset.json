@@ -1,12 +1,12 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Isha/Projects/tw-inventory/spec/support/mongoid.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/support/mongoid.rb": [
         1,
         1,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/controllers/application_controller.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -35,7 +35,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/controllers/asset_types_controller_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/controllers/asset_types_controller_spec.rb": [
         1,
         null,
         1,
@@ -52,7 +52,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/controllers/asset_types_controller.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/controllers/asset_types_controller.rb": [
         1,
         null,
         1,
@@ -61,7 +61,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/controllers/assets_controller_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/controllers/assets_controller_spec.rb": [
         1,
         null,
         1,
@@ -113,7 +113,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/controllers/assets_controller.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/controllers/assets_controller.rb": [
         1,
         null,
         1,
@@ -140,7 +140,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/controllers/users_controller_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/controllers/users_controller_spec.rb": [
         1,
         null,
         1,
@@ -163,7 +163,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/controllers/users_controller.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -174,7 +174,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/models/asset_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/models/asset_spec.rb": [
         1,
         null,
         1,
@@ -216,7 +216,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/models/asset.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/models/asset.rb": [
         1,
         1,
         1,
@@ -233,7 +233,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/models/asset_type_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/models/asset_type_spec.rb": [
         1,
         null,
         1,
@@ -283,7 +283,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/models/asset_type.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/models/asset_type.rb": [
         1,
         1,
         1,
@@ -305,7 +305,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/models/assignment_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/models/assignment_spec.rb": [
         1,
         null,
         1,
@@ -340,7 +340,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/models/assignment.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/models/assignment.rb": [
         1,
         1,
         1,
@@ -357,7 +357,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/spec/models/user_spec.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/spec/models/user_spec.rb": [
         1,
         null,
         1,
@@ -382,7 +382,7 @@
         null,
         null
       ],
-      "/Users/Isha/Projects/tw-inventory/app/models/user.rb": [
+      "/Users/Paras/Documents/repos/asset_management/tw-inventory/app/models/user.rb": [
         1,
         1,
         1,
@@ -409,6 +409,6 @@
         null
       ]
     },
-    "timestamp": 1396526543
+    "timestamp": 1396601332
   }
 }
