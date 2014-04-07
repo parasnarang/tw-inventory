@@ -9,7 +9,7 @@
         -#= render :partial => 'assets/asset_table'
 
   #asset_details.jumbotron.tiles-container
-    %label.label-default.hero-end.btn-link.view-more-link{for: 'view-more'} View More
+    %label.hero-end.btn-link.view-more-link{for: 'view-more'} View More
     %ul.assets-tiles.thumbnails
       - AssetType.all.each do |asset_type|
         - asset_unassigned_count = asset_type.unassigned_asset_count
@@ -19,11 +19,11 @@
             .card
               .front.face
                 - if asset_unassigned_count > 0
-                  %label.label-default.text-center.alert-success.asset-label{'data-url' => assets_path(asset_type_id: asset_type.id, assignment: :unassigned)}
+                  %label.text-center.alert-success.asset-label{'data-url' => assets_path(asset_type_id: asset_type.id, assignment: :unassigned)}
                     0
                     = "Available [#{asset_unassigned_count}]"
                 - else
-                  %label.label-default.text-center.alert-danger.asset-label Not Available
+                  %label.text-center.alert-danger.asset-label Not Available
                 -#-require 'pry'; binding.pry
                 %img.asset-image{src: asset_type.image}
               .back.face

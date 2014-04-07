@@ -22,36 +22,36 @@
       -#.tab-pane.active{id: 'tab_assignment'}
         .form-horizontal
           .form-group
-            = t.label.label-default :asset_id, 'Asset ID', class: 'control-label'
+            = t.label :asset_id, 'Asset ID', class: 'control-label'
             = t.text_field :asset_id
           .form-group
-            = t.label.label-default :serial, 'Serial', class: 'control-label'
+            = t.label :serial, 'Serial', class: 'control-label'
             = t.text_field :serial
           .form-group
-            = t.label.label-default :office_id, 'Office', class: 'control-label'
+            = t.label :office_id, 'Office', class: 'control-label'
             = t.select :office_id, options_for_select([['Select', nil]] + Office.all.map{|c| [c.name, c.id]}, @asset.office_id)
               %a{href: '#new_office', 'data-toggle' => :modal}
                 %span.glyphicon.glyphicon-plus-sign
           .form-group
-            = t.label.label-default :company_id, 'Company', class: 'control-label'
+            = t.label :company_id, 'Company', class: 'control-label'
             = t.select :company_id, options_for_select([['Select', nil]] + Company.all.map{|c| [c.name, c.id]}, @asset.company_id)
             %a{href: '#new_company', 'data-toggle' => :modal}
               %span.glyphicon.glyphicon-plus-sign
           .form-group
-            = t.label.label-default :model_id, 'Model', class: 'control-label'
+            = t.label :model_id, 'Model', class: 'control-label'
             = t.select :model_id, options_for_select([['Select', nil]] + Model.where(asset_type_id: @asset_type).map{|c| [c.name, c.id]}, @asset.model_id)
             %a{href: '#new_model', 'data-toggle' => :modal}
               %span.glyphicon.glyphicon-plus-sign
           .form-group
-            = t.label.label-default :warranty_id, 'Warranty', class: 'control-label'
+            = t.label :warranty_id, 'Warranty', class: 'control-label'
             = t.select :warranty_id, options_for_select([['Select', nil]] + Warranty.all.map{|c| [c.name, c.id]},  @asset.warranty_id)
             %a{href: '#new_warranty', 'data-toggle' => :modal}
               %span.glyphicon.glyphicon-plus-sign
           .form-group
-            = t.label.label-default :warranty_start, 'Warranty Start Date', class: 'control-label'
+            = t.label :warranty_start, 'Warranty Start Date', class: 'control-label'
             = t.text_field :warranty_start, type: :date, 'data-value' => Time.now.strftime('%d/%m/%Y'), value: Time.now.strftime('%d/%m/%Y')
           .form-group
-            = t.label.label-default :procurement_date, 'Procurement Date', class: 'control-label'
+            = t.label :procurement_date, 'Procurement Date', class: 'control-label'
             = t.text_field :procurement_date, type: :date, 'data-value' => Time.now.strftime('%d/%m/%Y'), value: Time.now.strftime('%d/%m/%Y')
 
       - input_groups.each do |group|
@@ -67,7 +67,7 @@
                     = g.hidden_field :name
                     = g.hidden_field :form_attribute_id
                     - key = form_attribute.name.snake_case
-                    = g.label.label-default :value, form_attribute.name, class: "control-label"
+                    = g.label :value, form_attribute.name, class: "control-label"
                     - params = {id:  "asset_#{key}_#{i}", type: form_attribute.input_element_type}
                     - params[:required]= :required if form_attribute.required?
                     = g.text_field :value, params
