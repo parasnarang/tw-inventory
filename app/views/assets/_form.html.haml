@@ -5,7 +5,7 @@
   = t.fields_for :properties do |ff|
     - asset_properties = @asset.properties
     - asset_properties.each do |field_name|
-      = ff.label.label-default field_name
+      = ff.label field_name
       = ff.text_field field_name
       %br
 
