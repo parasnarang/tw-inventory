@@ -2,12 +2,16 @@
   = @asset_type.name
 = form_for ([@asset_type, @asset]) do |t|
   -#= t.hidden_field :form_id, value: @form.try(:id)
-  = t.fields_for :properties do |ff|
-    - asset_properties = @asset.properties
-    - asset_properties.each do |field_name|
-      = ff.label field_name
-      = ff.text_field field_name
-      %br
+  .form-group
+    = t.fields_for :properties do |ff|
+      - asset_properties = @asset.properties
+      - asset_properties.each do |field_name|
+        .row
+          .col-md-2
+            = ff.label field_name
+          .col-md-2
+            = ff.text_field field_name
+        %br
 
   -#.tabbable
     -#%ul.nav.nav-tabs
