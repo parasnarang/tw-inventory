@@ -1,19 +1,20 @@
 #dashboard_page.page
-  -#- @assets = Asset.with_warranty_less_than_3_months
-  -#- @assets = Asset.all
-  - if true #@assets.present?
-    #warranty_pending_assets.jumbotron.dashboard
-      .title
-        Assets With warranty expiring in less than 3 Months
-      #warranty_pending_assets_list
-        -#= render :partial => 'assets/asset_table'
+  .row
+    -#- @assets = Asset.with_warranty_less_than_3_months
+    -#- @assets = Asset.all
+    - if true #@assets.present?
+      #warranty_pending_assets.jumbotron.dashboard
+        .title
+          Assets With warranty expiring in less than 1 Month
+        #warranty_pending_assets_list
+          -#= render :partial => 'assets/asset_table'
 
-  #asset_details.jumbotron.tiles-container
-    %label.hero-end.btn-link.view-more-link{for: 'view-more'} View More
+  .row#asset_details.jumbotron.tiles-container
+    %label.jumbotron-end.btn-link.view-more-link{for: 'view-more'} View More
     %ul.assets-tiles.thumbnails
       - AssetType.all.each do |asset_type|
         - asset_unassigned_count = asset_type.unassigned_asset_count
-        %li.tile.text-center.col-sm-6.col-md-4
+        %li.tile.text-center.col-sm-6
           .thumbnail
             .flip.glyphicon.glyphicon-info-sign
             .card
@@ -33,14 +34,3 @@
               = "#{asset_type.name} [#{asset_type.total_asset_count}]"
 
             %button.btn.btn-block.btn-default{'data-url' => assets_path(asset_type_id: asset_type.id)} View All
-
-  .bs-example
-    .row
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: '#'}
-
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: '#'}
-
-      .col-xs-6.col-md-3
-        %a.thumbnail{href: '#'}
