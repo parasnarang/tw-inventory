@@ -40,10 +40,37 @@ describe AssetsController do
   end
 
   context :index do
+    before do
+      @asset = FactoryGirl.create(:asset, :asset_type => @at)
+    end
     it "should render list of all assets" do
       Asset.should_receive(:all).and_call_original
       get :index
       response.should render_template(:index)
+    end
+
+    it "should render list of all assets of particular asset type" do
+      Asset.should_receive(:where).and_call_original
+      get :index, :asset_type_id => @at.id
+      response.should render_template(:asset_list)
+    end
+  end
+
+  context :show do
+    before do
+      @asset = FactoryGirl.create(:asset, :asset_type => @at)
+    end
+
+    it "should render a particular asset" do
+      Asset.should_receive(:find).and_call_original
+      get :show, :id => @asset.id
+      response.should render_template(:show)
+    end
+
+    it "should render 404 for wrong id" do
+      Asset.should_receive(:find).and_call_original
+      get :show, :id => 1
+      response.status.should == 404
     end
   end
 

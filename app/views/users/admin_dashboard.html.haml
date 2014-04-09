@@ -20,7 +20,7 @@
             .card
               .front.face
                 - if asset_unassigned_count > 0
-                  %label.text-center.alert-success.asset-label{'data-url' => assets_path(asset_type_id: asset_type.id, assignment: :unassigned)}
+                  -#%label.text-center.alert-success.asset-label{'data-url' => assets_path(asset_type_id: asset_type.id, assignment: :unassigned)}
                     0
                     = "Available [#{asset_unassigned_count}]"
                 - else
@@ -33,4 +33,5 @@
             .asset-name
               = "#{asset_type.name} [#{asset_type.total_asset_count}]"
 
-            %button.btn.btn-block.btn-default{'data-url' => assets_path(asset_type_id: asset_type.id)} View All
+            -#%button.btn.btn-block.btn-default{'data-url' => assets_path(asset_type_id: asset_type.id)} View All
+            = link_to 'View All', assets_path(asset_type_id: asset_type.id)
