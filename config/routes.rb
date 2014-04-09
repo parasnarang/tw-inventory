@@ -12,7 +12,7 @@ TwInventory::Application.routes.draw do
     resources :assets, only: [:create, :new]
   end
 
-  resources :assets, only: [:index, :show] do
+  resources :assets, only: [:index, :show, :destroy] do
     resources :assignments
   end
   get '/assets/clone/:id' => 'assets#clone', :as => :clone

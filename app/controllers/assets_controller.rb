@@ -22,10 +22,10 @@ class AssetsController < ApplicationController
     if params[:asset_type_id].present?
       @asset_type = AssetType.find(params[:asset_type_id])
       @assets = Asset.where(:asset_type => @asset_type)
-      render 'asset_list'
+      render 'index'
     else
       @assets = Asset.all
-      render 'index'
+      render 'asset_list'
     end
 
   end
@@ -40,7 +40,11 @@ class AssetsController < ApplicationController
   end
 
   def clone
+  end
 
+  def destroy
+    Asset.find(params[:id]).destroy
+    redirect_to assets_path
   end
 
 end

@@ -46,13 +46,13 @@ describe AssetsController do
     it "should render list of all assets" do
       Asset.should_receive(:all).and_call_original
       get :index
-      response.should render_template(:index)
+      response.should render_template(:asset_list)
     end
 
     it "should render list of all assets of particular asset type" do
       Asset.should_receive(:where).and_call_original
       get :index, :asset_type_id => @at.id
-      response.should render_template(:asset_list)
+      response.should render_template(:index)
     end
   end
 
@@ -72,6 +72,25 @@ describe AssetsController do
       get :show, :id => 1
       response.status.should == 404
     end
+  end
+
+  context :destroy do
+    before do
+      @asset = FactoryGirl.create(:asset, :asset_type => @at)
+    end
+    it "should destroy the asset" do
+      delete :destroy, :id => @asset.id
+      lambda{Asset.find(@asset.id)}.should raise_error
+    end
+
+    it "should redirect to index path" do
+      delete :destroy, :id => @asset.id
+      response.should redirect_to(assets_path)
+    end
+  end
+
+  context :clone do
+
   end
 
 end

@@ -1,5 +1,3 @@
-= "ASSET TYPE : #{@asset_type.name}"
-
 #assets_list
   - headings = {type: 'Type', asset_id: 'Asset ID', serial: 'Serial No.', company: 'Company', model: 'Model', warranty: 'Warranty', warranty_left: 'Warranty Left (days)', assignment: 'Assignment'}
   -#- headings[action] =  'Action' if current_user.admin?
@@ -15,8 +13,10 @@
             No Assets Present
       - @assets.each do |asset|
         %tr{ id: asset.id}
-          %td.type{'data-url' => asset_path(asset) }
-            = asset.asset_type.name
+          -#%td.type{'data-url' => asset_path(asset) }
+          %td
+            = link_to asset.asset_type.name, asset_path(asset)
+            -#= asset.asset_type.name
           %td.asset_id{'data-url' => asset_path(asset) }
             = asset["asset_id"]
           %td.serial{'data-url' => asset_path(asset) }
