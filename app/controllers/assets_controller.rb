@@ -39,4 +39,8 @@ class AssetsController < ApplicationController
     end
   end
 
+  def clone
+
+  end
+
 end

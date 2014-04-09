@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe Assignment do
-  it {should belong_to(:user)}
+  it {should belong_to(:assignee)}
   it {should belong_to(:asset)}
   it {should validate_presence_of(:asset)}
-  it {should validate_presence_of(:user)}
+  it {should validate_presence_of(:assignee_id)}
+  it {should validate_presence_of(:start_date)}
 
   context :current do
 
@@ -12,7 +13,7 @@ describe Assignment do
       @non_admin = FactoryGirl.create(:user)
       @asset_type = FactoryGirl.create(:asset_type)
       @asset = FactoryGirl.create(:asset, :asset_type => AssetType.first)
-      @assignment = FactoryGirl.create(:assignment, :asset => @asset, :user => @non_admin, :start_date => 1.month.ago.to_date, :end_date => nil)
+      @assignment = FactoryGirl.create(:assignment, :asset => @asset, :assignee => @non_admin, :start_date => 1.month.ago.to_date, :end_date => nil)
     end
 
     it "should return true if assignment end date is nil" do

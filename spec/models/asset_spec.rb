@@ -18,17 +18,17 @@ describe Asset do
     end
 
     it "should return true for assets with no current assignments" do
-      FactoryGirl.create(:assignment, :asset => @asset, :user => @non_admin, :start_date => 1.month.ago.to_date, :end_date => 1.day.ago.to_date)
+      FactoryGirl.create(:assignment, :asset => @asset, :assignee => @non_admin, :start_date => 1.month.ago.to_date, :end_date => 1.day.ago.to_date)
       @asset.should be_unassigned
     end
 
     it "should return false for assets with current assignments having end date" do
-      FactoryGirl.create(:assignment, :asset => @asset, :user => @non_admin, :start_date => 1.month.ago.to_date, :end_date => 1.day.from_now.to_date)
+      FactoryGirl.create(:assignment, :asset => @asset, :assignee => @non_admin, :start_date => 1.month.ago.to_date, :end_date => 1.day.from_now.to_date)
       @asset.should_not be_unassigned
     end
 
     it "should return false for assets with current assignments with nil end date" do
-      FactoryGirl.create(:assignment, :asset => @asset, :user => @non_admin, :start_date => 1.month.ago.to_date, :end_date => nil)
+      FactoryGirl.create(:assignment, :asset => @asset, :assignee => @non_admin, :start_date => 1.month.ago.to_date, :end_date => nil)
       @asset.should_not be_unassigned
     end
   end

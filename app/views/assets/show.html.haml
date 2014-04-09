@@ -1,6 +1,6 @@
 .breadcrumb
   .pull-right
-    = link_to 'Clone', clone_asset_path(id: @asset.id), class: 'btn btn-info'
+    = link_to 'Clone', clone_path(:id => @asset.id), class: 'btn btn-info'
     %a.btn.btn-danger{href: '#delete'} Remove
   - if @labels.present?
     .labels
@@ -8,13 +8,12 @@
         %span.label.label-important
           = label
 
-
-- input_groups = @asset.asset_attributes_groups.load
+-#- input_groups = @asset.asset_attributes_groups.load
 .tabbable
   %ul.nav.nav-tabs
     %li.active
       %a{'data-toggle' => 'tab', href: '#tab_general_data'} General
-    - (input_groups.pluck(:name)||[]).each do |name|
+    -#- (input_groups.pluck(:name)||[]).each do |name|
       %li
         %a{"data-toggle" => "tab", href: "#tab_#{name.snake_case}"}
           = name
@@ -23,7 +22,7 @@
 
 
   .tab-content
-    .tab-pane.active{:id => 'tab_general_data'}
+    -#.tab-pane.active{:id => 'tab_general_data'}
       .form-horizontal
         .control-group
           %label.control-label
@@ -65,7 +64,7 @@
             Procurement Date
           .controls
             %input{ value: @asset.procurement_date, readonly: :readonly, type: :text}
-    - input_groups.each do |group|
+    -#- input_groups.each do |group|
       .tab-pane{id: "tab_#{group.name.snake_case}"}
         .form-horizontal
           - group.asset_attributes.load.each do |asset_attribute|
@@ -78,7 +77,7 @@
     .tab-pane{:id => 'tab_assignment'}
       - assignments = @asset.assignments.order(assignment_date: :desc)
 
-      = render :partial => 'assignment_form'
+      = render :partial => 'assignments/assignment_form'
 
       - if assignments.size > 0
         %table.table
@@ -86,21 +85,29 @@
             %tr
               %th S. No
               %th Status
-              %th Since Date
-              %th Duration
+              %th Start Date
+              %th End Date
           %tbody
             - i = 0
-            - ([Assignment.new( assignment_date: Time.now)] + assignments).each_cons(2) do |ass_group|
-              - next if ass_group.size < 1
-              - assignment = ass_group[1]
+            - assignments.each do |assignment|
               %tr{ id: assignment.id }
-                %td.sno
-                  = i+=1
-                %td.emp_id
-                  = assignment.description
-                %td.assignment_date
-                  = assignment.assignment_date.strftime('%d %b, %Y') rescue ''
-                %td.duration
-                  = "#{((ass_group[0].assignment_date - assignment.assignment_date)/86400).round} days" rescue ''
+              %td.sno
+                = i+=1
+              %td.emp_id
+                = assignment.category
+              %td.assignment_date
+                = assignment.start_date.strftime('%d %b, %Y') rescue ''
+              %td.duration
+                = assignment.end_date.strftime('%d %b, %Y') rescue ''
+
       - else
         No Assignments
+
+-#:javascript
+-#  $(function(){
+-#    if (#{@assignment_errors.present?}) {
+-#    //alert('aaa');
+-#     $('.general').removeClass('.active');
+-#     $('.assignment').addClass('.active');
+-#    }
+-#  })
