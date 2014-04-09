@@ -9,6 +9,7 @@ class AssetType
   validates_presence_of :name
 
   has_many :assets
+  has_many :models
 
   def unassigned_asset_count
     self.assets.select{|a| a.unassigned?}.count
