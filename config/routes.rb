@@ -12,7 +12,7 @@ TwInventory::Application.routes.draw do
     resources :assets, only: [:create, :new]
   end
 
-  resources :assets, only: [:index]
+  resources :assets, only: [:index, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
