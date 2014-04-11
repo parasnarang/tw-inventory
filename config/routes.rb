@@ -14,9 +14,18 @@ TwInventory::Application.routes.draw do
 
   resources :assets, only: [:index, :show, :destroy] do
     resources :assignments
+    collection do
+      get 'sample_assets_csv'
+      post 'import'
+    end
+  end
+
+  resources :offices do
+    post :create, :format => :json
   end
   get '/assets/clone/:id' => 'assets#clone', :as => :clone
-
+  #get 'assets/sample_assets_csv' => 'assets#sample_assets_csv', :as => :sample_assets_csv
+  #match 'assets/sample_assets_csv' => 'assets#sample_assets_csv', :via => :get
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

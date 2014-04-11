@@ -2,7 +2,9 @@ require 'spec_helper'
 
 describe Asset do
   it { should belong_to(:asset_type) }
-  it { should belong_to(:asset_type) }
+  it { should belong_to(:company) }
+  it { should belong_to(:model) }
+  it { should belong_to(:office) }
   it { should have_many(:assignments)}
 
   before do

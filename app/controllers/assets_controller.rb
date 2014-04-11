@@ -25,7 +25,7 @@ class AssetsController < ApplicationController
       render 'index'
     else
       @assets = Asset.all
-      render 'asset_list'
+      render :partial => 'asset_list'
     end
 
   end
@@ -45,6 +45,15 @@ class AssetsController < ApplicationController
   def destroy
     Asset.find(params[:id]).destroy
     redirect_to assets_path
+  end
+
+  def import
+    # not decided on the sample format
+    render 'users/admin_dashboard'
+  end
+
+  def sample_assets_csv
+    send_file "#{Rails.root}/sample/sample_assets.csv", :type=>"application/csv"
   end
 
 end

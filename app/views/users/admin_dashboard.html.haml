@@ -1,5 +1,7 @@
 #dashboard_page.page
   .row
+    %a{href: '#import_assets', 'data-toggle' => :modal}
+      %span.icon-plus-sign
     -#- @assets = Asset.with_warranty_less_than_3_months
     -#- @assets = Asset.all
     - if true #@assets.present?
@@ -35,3 +37,24 @@
 
             -#%button.btn.btn-block.btn-default{'data-url' => assets_path(asset_type_id: asset_type.id)} View All
             = link_to 'View All', assets_path(asset_type_id: asset_type.id)
+
+#import_assets.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3 Import
+  = form_tag import_assets_path ,html: {class: 'ajax'} do
+    .modal-body.form-horizontal
+      .control-group
+        -#= t.label :country_id, 'Country', class: 'control-label'
+        .controls
+          -#= t.select :country_id, options_for_select([['Select', nil]] + Country.all.map{|c| [c.name, c.id]})
+          -#= t.select :country_id, country_select
+      .control-group
+        -#= t.label :name, 'Office Name', class: 'control-label'
+        .controls
+          -#= t.text_field :name
+      = file_field_tag 'Assets CSV'
+      = link_to 'Sample CSV', sample_assets_csv_assets_path
+    .modal-footer
+      %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+      = submit_tag 'Import', class: 'btn'

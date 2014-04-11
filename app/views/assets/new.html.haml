@@ -1,1 +1,20 @@
 = render :partial => "form"
+
+#new_office.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-header
+    %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+    %h3 New Office
+  = form_for Office.new ,html: {class: 'ajax'}do |t|
+    .modal-body.form-horizontal
+      .control-group
+        = t.label :country, 'Country', class: 'control-label'
+        .controls
+          -#-require 'pry'; binding.pry
+          = t.select :country, options_for_select([['Select', nil]] + Country.all)
+      .control-group
+        = t.label :name, 'Office Name', class: 'control-label'
+        .controls
+          = t.text_field :name
+    .modal-footer
+      %button.btn{"aria-hidden" => "true", "data-dismiss" => "modal"} Close
+      = t.submit class: 'btn'

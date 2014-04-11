@@ -7,6 +7,9 @@ class Asset
 
   belongs_to :asset_type
   has_many :assignments
+  belongs_to :company
+  belongs_to :model
+  belongs_to :office
 
   def unassigned?
     self.assignments.blank? || self.assignments.select{|a| a.current?}.blank?
