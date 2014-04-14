@@ -28,7 +28,7 @@
                 - else
                   %label.text-center.alert-danger.asset-label Not Available
                 -#-require 'pry'; binding.pry
-                %img.asset-image{src: asset_type.image}
+                %img.asset-image{src: '/assets/' + asset_type.image}
               .back.face
                 -#= pie_chart asset_type.statistics
 
