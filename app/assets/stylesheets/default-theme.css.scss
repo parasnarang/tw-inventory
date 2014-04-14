@@ -1,7 +1,7 @@
 @import 'mixins';
 
 .default-theme {
-  background-image: url('/images/pw_pattern.png');
+  background-image: url('/assets/pw_pattern.png');
 
   .navbar {
     @include gradient(#eee, #bbb);
