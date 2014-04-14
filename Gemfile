@@ -68,3 +68,6 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+# Rails Admin
+gem 'rails_admin'
