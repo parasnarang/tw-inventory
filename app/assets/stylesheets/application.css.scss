@@ -9,8 +9,8 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
  *= require bootstrap
+ *= require_tree .
  */
 @import 'font-awesome';
 
@@ -18,23 +18,13 @@ table {
   margin-top: 20px;
 }
 
-.container-fluid {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 1200px;
-}
-
-.navbar {
-  padding: 10px 10px 0 0;
-}
-
 [data-url] {
   cursor: pointer;
 }
 
 body {
-  padding-top: 30px;
-
+  line-height: 20px !important;
+  padding-top: 60px;
   #notifications {
     position: absolute;
     z-index: 9;
@@ -45,17 +35,22 @@ body {
   }
 }
 
+.container {
+  width: auto !important;
+  margin: 0 20px !important;
+}
+
 #logout {
   color: #aaa;
   font-size: 20px;
-  border-radius: 20px;
+  border-radius: 22px;
+  padding: 0;
 
   &:hover {
     color: #E98;
   }
 }
 
-/*jumbotron */
 .hero-unit {
   padding: 50px 50px;
   font-size: 18px;

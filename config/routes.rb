@@ -1,10 +1,10 @@
 TwInventory::Application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'users#admin_dashboard'
+  #root 'users#admin_dashboard'
+  root 'admin#index'
   get 'logout' => 'application#logout'
 
   get 'employee_dashboard' => 'users#employee_dashboard'#, :as => 'employee_dashboard_path'
@@ -12,6 +12,8 @@ TwInventory::Application.routes.draw do
   resources :asset_types do
     resources :assets, only: [:create, :new]
   end
+
+  resources :admin, only: [:index]
 
   resources :assets, only: [:index, :show, :destroy] do
     resources :assignments
@@ -25,6 +27,9 @@ TwInventory::Application.routes.draw do
     post :create, :format => :json
   end
   get '/assets/clone/:id' => 'assets#clone', :as => :clone
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   #get 'assets/sample_assets_csv' => 'assets#sample_assets_csv', :as => :sample_assets_csv
   #match 'assets/sample_assets_csv' => 'assets#sample_assets_csv', :via => :get
 

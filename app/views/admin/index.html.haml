@@ -1,0 +1,87 @@
+.row-fluid
+  .span3
+    .well.sidebar-nav
+      %ul.nav.nav-list
+        %li.nav-header Navigation
+        %li{"data-model" => "asset"}
+          %a.pjax{href: "/admin/asset"} Assets
+        %li{"data-model" => "asset_type"}
+          %a.pjax{href: "/admin/asset_type"} Asset types
+        %li{"data-model" => "assignment"}
+          %a.pjax{href: "/admin/assignment"} Assignments
+        %li{"data-model" => "company"}
+          %a.pjax{href: "/admin/company"} Companies
+        %li{"data-model" => "model"}
+          %a.pjax{href: "/admin/model"} Models
+        %li{"data-model" => "office"}
+          %a.pjax{href: "/admin/office"} Offices
+        %li{"data-model" => "user"}
+          %a.pjax{href: "/admin/user"} Users
+
+  .span9
+    #asset_details.jumbotron.tiles-container
+      %ul.assets-tiles.thumbnails
+        - AssetType.all.each do |asset_type|
+          - asset_unassigned_count = asset_type.unassigned_asset_count
+          %li.tile.text-center
+            %a.thumbnail{href: '/admin/asset_type/'+asset_type.id}
+              .card
+                .front.face
+                  %img.asset-image{src: '/assets/' + asset_type.image}
+              .asset-name
+                = "#{asset_type.name} [#{asset_type.total_asset_count}]"
+
+.row-fluid
+  %h3
+    Assets with warranty expiring in less than 1 Month
+  %table.table.table-bordered.table-striped#warranty_pending_assets_list
+    %tr
+      %th Invoice number
+      %th Purchased date
+      %th Asset type
+      %th Company
+      %th Modal
+      %th Office
+    - if @assets.present?
+      - @assets.all.each do |asset|
+        %tr
+          %td
+            =asset.invoice_number
+          %td
+            =asset.purchased_date
+          %td
+            =asset.asset_type.name
+          %td
+            =asset.company
+          %td
+            =asset.model
+          %td
+            =asset.office
+
+.row-fluid
+  %h3
+    Assets with status updated
+  %table.table.table-bordered.table-striped#warranty_pending_assets_list
+    %tr
+      %th Invoice number
+      %th Purchased date
+      %th Asset type
+      %th Company
+      %th Modal
+      %th Office
+    - if @assets.present?
+      - @assets.all.each do |asset|
+        %tr
+          %td
+            =asset.invoice_number
+          %td
+            =asset.purchased_date
+          %td
+            =asset.asset_type.name
+          %td
+            =asset.company
+          %td
+            =asset.model
+          %td
+            =asset.office
+

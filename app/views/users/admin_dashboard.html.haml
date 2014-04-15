@@ -1,3 +1,22 @@
+.well.sidebar-nav
+  %ul.nav.nav-list
+    %li.nav-header Navigation
+    %li{"data-model" => "asset"}
+      %a.pjax{href: "/admin/asset"} Assets
+    %li{"data-model" => "asset_type"}
+      %a.pjax{href: "/admin/asset_type"} Asset types
+    %li{"data-model" => "assignment"}
+      %a.pjax{href: "/admin/assignment"} Assignments
+    %li{"data-model" => "company"}
+      %a.pjax{href: "/admin/company"} Companies
+    %li{"data-model" => "model"}
+      %a.pjax{href: "/admin/model"} Models
+    %li{"data-model" => "office"}
+      %a.pjax{href: "/admin/office"} Offices
+    %li{"data-model" => "user"}
+      %a.pjax{href: "/admin/user"} Users
+  %ul.nav.nav-list
+
 #dashboard_page.page
   .row
     %a{href: '#import_assets', 'data-toggle' => :modal}

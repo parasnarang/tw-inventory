@@ -5,20 +5,24 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
   %body.default-theme
     .container
-      .row.navbar.navbar-default{role: 'navigation'}
-        .navbar-header
-          = link_to 'TW Inventory', root_path, class: 'navbar-brand'
-          - if true || current_user.admin?
-            %ul.nav.navbar-nav
-              %li
-                = link_to 'Asset Types', asset_types_path
-              %li
-                = link_to 'Assets', assets_path
-
-        %a#logout.pull-right.btn.btn-default{href: logout_path}
-          %span.glyphicon.glyphicon-off
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container-fluid
+            %a.brand.pjax{href: "/admin/"}
+              Tw Inventory
+              %small Admin
+            .nav-collapse
+              %ul.nav.pull-right.root_links
+                %li.dashboard_root_link
+                  %a.pjax{href: "/admin/"} Dashboard
+                %li
+                  %a{href: "/"} Home
+                -#%li
+                -#  %a#logout.pull-right.btn.btn-default{href: logout_path}
+                -#    %i.icon-off
 
       = yield
 

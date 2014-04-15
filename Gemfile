@@ -6,7 +6,7 @@ gem 'rails', '4.0.4'
 
 # Use SCSS for stylesheets
 gem 'font-awesome-sass-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '= 2.3.0.1'
 gem 'sass-rails', '~> 4.0.2'
 
 gem 'countries', :require => 'iso3166'
