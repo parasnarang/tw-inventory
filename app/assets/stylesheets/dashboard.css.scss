@@ -182,15 +182,15 @@
 }
 
 img {
-  height: 125px;
+  height: 130px;
 }
 
 .thumbnails {
   > li {
-    width: 180px;
+    width: 220px;
   }
 
-  & > li:first-child {
-    margin: 0;
-  }
+//  & > li:first-child {
+//    margin: 0;
+//  }
 }

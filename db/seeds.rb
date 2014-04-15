@@ -14,3 +14,4 @@ keyboard = AssetType.create(:properties => [:serial, :procurement_date], :name =
 mouse = AssetType.create(:properties => [:serial, :procurement_date], :name => 'Mouse', image: 'mouse_250x250.jpg')
 monitor = AssetType.create(:properties => [:serial, :procurement_date], :name => 'Monitor', image: 'monitor_250x250.jpg')
 networkDevices = AssetType.create(:properties => [:serial, :procurement_date, :mac_address], :name => 'Network Devices', image: 'router.jpg')
+misc = AssetType.create(:properties => [:serial, :procurement_date], :name => 'Miscellaneous', image: 'wires.jpg')
