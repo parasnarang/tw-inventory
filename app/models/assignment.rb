@@ -1,5 +1,6 @@
 class Assignment
   include Mongoid::Document
+
   field :start_date,:type => Date
   field :end_date,:type => Date
   field :category, :type => String
@@ -7,6 +8,7 @@ class Assignment
 
   belongs_to :assignee, :class_name => 'User'
   belongs_to :asset
+  belongs_to :user
 
   validates_presence_of :assignee_id
   validates_presence_of :start_date

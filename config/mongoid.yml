@@ -14,7 +14,6 @@ development:
         # Change the default write concern. (default = { w: 1 })
         # write:
         # w: 1
-
         # Change the default consistency model to primary, secondary.
         # 'secondary' will send reads to secondaries, 'primary' sends everything
         # to master. (default: primary)
@@ -28,6 +27,8 @@ development:
         # operation on failure. (default: 1)
         # retry_interval: 1
   # Configure Mongoid specific options. (optional)
+  identity_map_enabled: true
+
   options:
     # Includes the root model name in json serialization. (default: false)
     # include_root_in_json: false

@@ -13,16 +13,21 @@
           .container-fluid
             %a.brand.pjax{href: "/admin/"}
               Tw Inventory
-              %small Admin
-            .nav-collapse
-              %ul.nav.pull-right.root_links
-                %li.dashboard_root_link
-                  %a.pjax{href: "/admin/"} Dashboard
-                %li
-                  %a{href: "/"} Home
-                -#%li
-                -#  %a#logout.pull-right.btn.btn-default{href: logout_path}
-                -#    %i.icon-off
+              - if @is_admin
+                %small Admin
+              - else
+                %small Employee
+
+            - if @is_admin
+              .nav-collapse
+                %ul.nav.pull-right.root_links
+                  %li.dashboard_root_link
+                    %a.pjax{href: "/admin/"} Dashboard
+                  %li
+                    %a{href: "/"} Home
+                  %li
+                    %a#logout.pull-right.btn.btn-default{href: logout_path}
+                      %i.icon-off
 
       = yield
 

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter RubyCAS::Filter
   append_before_filter :authenticate
   append_before_filter :authorize!, :except => [:logout, :employee_dashboard]
+  before_filter :is_admin
   #helper_method :current_user
 
   def logout
@@ -19,6 +20,10 @@ class ApplicationController < ActionController::Base
 
   def authorize!
     redirect_to employee_dashboard_path unless User.admin?(@current_username)
+  end
+
+  def is_admin
+    @is_admin = User.where(role: 'Admin').pluck(:ad_id).include?(@current_username)
   end
 
   #def current_username
