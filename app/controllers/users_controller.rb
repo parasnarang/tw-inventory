@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def employee_dashboard
-    @assignments = User.find_by(ad_id: session[:cas_user]).assignments
+    @assignments = Assignment.where(assigned_to: session[:cas_user])
   end
 
 end

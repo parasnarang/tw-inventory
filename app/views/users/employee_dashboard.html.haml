@@ -1,21 +1,26 @@
-.row-fluid
-  %table.table.table-bordered.table-striped#warranty_pending_assets_list
-    %tr
-      %th Start date
-      %th End date
-      %th Assignee
-      %th Asset
-      %th Asset type
-    - if @assignments.present?
-      - @assignments.all.each do |assignment|
+- if @assignments.present?
+  .row-fluid
+    %table.table.table-bordered.table-striped#warranty_pending_assets_list
+      %tr
+        %th Start date
+        %th End date
+        %th Assignee
+        %th Asset
+        %th Asset type
+
+      - @assignments.each do |assignment|
         %tr
           %td
             =assignment.start_date
           %td
             =assignment.end_date
           %td
-            =assignment.assignee.name
+            =assignment.assignee
           %td
             =assignment.asset.invoice_number
           %td
-            =assignment.asset.asset_type.name
+            =assignment.asset_type.name
+
+- else
+  .alert.alert-danger
+    You have not been assigned any asset yet
