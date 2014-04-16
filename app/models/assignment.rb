@@ -1,18 +1,19 @@
 class Assignment
   include Mongoid::Document
 
-  field :start_date,:type => Date
-  field :end_date,:type => Date
-  field :category
-  field :assignee_id
+  field :start_date, :type => Date
+  field :end_date, :type => Date
+  field :assignee
+  field :assigned_to
 
-  belongs_to :assignee, :class_name => 'User'
-  belongs_to :asset
-  belongs_to :user
+  belongs_to :asset_type
+  belongs_to :asset, foreign_key: 'invoice_number'
 
-  validates_presence_of :assignee_id
-  validates_presence_of :start_date
-  validates_presence_of :asset
+  validates_presence_of :start_date, :asset, :assignee, :assigned_to
+
+  def assignee
+
+  end
 
   def current?
     self.end_date.nil? || self.end_date >= Date.today
