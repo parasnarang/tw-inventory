@@ -1,15 +1,14 @@
 class AssetType
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :properties, :type => Array
   field :name, :type => String
   field :image, :type => String
 
-  validates_presence_of :properties
   validates_presence_of :name
 
   has_many :assets
   has_many :models
+  has_and_belongs_to_many :properties
 
   def unassigned_asset_count
     self.assets.select{|a| a.unassigned?}.count
