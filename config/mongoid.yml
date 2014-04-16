@@ -14,6 +14,7 @@ development:
         # Change the default write concern. (default = { w: 1 })
         # write:
         # w: 1
+
         # Change the default consistency model to primary, secondary.
         # 'secondary' will send reads to secondaries, 'primary' sends everything
         # to master. (default: primary)
@@ -27,8 +28,6 @@ development:
         # operation on failure. (default: 1)
         # retry_interval: 1
   # Configure Mongoid specific options. (optional)
-  identity_map_enabled: true
-
   options:
     raise_not_found_error: false
 
@@ -58,6 +57,7 @@ development:
 
     # Ensure all times are UTC in the app side. (default: false)
     # use_utc: false
+
 test:
   sessions:
     default:
@@ -70,3 +70,17 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
+
+production:
+  sessions:
+    default:
+      database: tw_inventory_production
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0
+

@@ -28,7 +28,7 @@
             %a.thumbnail{href: '/admin/asset_type/'+asset_type.id}
               .card
                 .front.face
-                  %img.asset-image{src: '/assets/' + asset_type.image}
+                  %img.asset-image{src: asset_path(asset_type.image)}
               .asset-name
                 = "#{asset_type.name} [#{asset_type.total_asset_count}]"
 
