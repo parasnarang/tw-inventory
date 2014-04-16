@@ -3,6 +3,7 @@ class Asset
   include Mongoid::Timestamps
 
   field :invoice_number
+  field :serial_number
   field :purchased_date, type: Date
 
   belongs_to :asset_type

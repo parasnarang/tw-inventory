@@ -5,7 +5,7 @@
         %th Start date
         %th End date
         %th Assignee
-        %th Asset
+        %th Asset serial number
         %th Asset type
 
       - @assignments.each do |assignment|
@@ -17,7 +17,7 @@
           %td
             =assignment.assignee
           %td
-            =assignment.asset.invoice_number
+            =assignment.asset.serial_number
           %td
             =assignment.asset_type.name
 
