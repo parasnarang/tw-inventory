@@ -2,8 +2,8 @@ class Office
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  field :name, :type => String
-  field :country, :type => String
+  field :name
+  field :country
 
   #belongs_to :country
 

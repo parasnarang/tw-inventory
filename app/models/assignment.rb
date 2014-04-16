@@ -3,8 +3,8 @@ class Assignment
 
   field :start_date,:type => Date
   field :end_date,:type => Date
-  field :category, :type => String
-  field :assignee_id, :type => String
+  field :category
+  field :assignee_id
 
   belongs_to :assignee, :class_name => 'User'
   belongs_to :asset

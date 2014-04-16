@@ -4,9 +4,9 @@ class User
 
   ADMIN = "Admin"
 
-  field :ad_id, type: String
-  field :name, type: String
-  field :role, type: String
+  field :ad_id
+  field :name
+  field :role
 
   validates_presence_of :ad_id, :name, :role
 
