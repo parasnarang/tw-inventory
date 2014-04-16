@@ -10,10 +10,8 @@ class User
 
   validates_presence_of :ad_id, :name, :role
 
-  has_many :assignments
-
   def role_enum
-    [['admin'],['employee']]
+    [['Admin'],['Employee']]
   end
 
   def self.admin?(ad_id)

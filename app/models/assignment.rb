@@ -7,13 +7,9 @@ class Assignment
   field :assigned_to
 
   belongs_to :asset_type
-  belongs_to :asset, foreign_key: 'invoice_number'
+  belongs_to :asset
 
-  validates_presence_of :start_date, :asset, :assignee, :assigned_to
-
-  def assignee
-
-  end
+  validates_presence_of :start_date, :assignee, :assigned_to
 
   def current?
     self.end_date.nil? || self.end_date >= Date.today
