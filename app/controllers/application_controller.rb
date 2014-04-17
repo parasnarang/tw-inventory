@@ -22,7 +22,7 @@ class ApplicationController < ActionController::Base
   end
 
   def is_admin
-    @is_admin = Admin.find_by(name: @current_username)
+    @is_admin = Admin.find_by(ad_id: @current_username)
   end
 
 end

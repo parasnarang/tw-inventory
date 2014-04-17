@@ -11,6 +11,8 @@ class Asset
   belongs_to :model
   belongs_to :office
 
+  validates_presence_of :invoice_number, :serial_number, :purchased_date, :asset_type, :company, :model, :office
+
   def unassigned?
     self.assignments.blank? || self.assignments.select{|a| a.current?}.blank?
   end

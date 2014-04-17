@@ -9,7 +9,7 @@ class Assignment
   belongs_to :asset_type
   belongs_to :asset
 
-  validates_presence_of :start_date, :assignee, :assigned_to
+  validates_presence_of :start_date, :assignee, :assigned_to, :asset_type, :asset
 
   def current?
     self.end_date.nil? || self.end_date >= Date.today

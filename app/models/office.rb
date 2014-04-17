@@ -7,6 +7,5 @@ class Office
 
   #belongs_to :country
 
-  validates_presence_of :name
-  validates_presence_of :country
+  validates_presence_of :name, :country
 end

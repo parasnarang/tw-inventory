@@ -4,7 +4,7 @@ class AssetType
   field :name
   field :image
 
-  validates_presence_of :name
+  validates_presence_of :name, :image
 
   has_many :assets
   has_many :models
