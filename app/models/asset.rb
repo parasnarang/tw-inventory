@@ -11,6 +11,12 @@ class Asset
   belongs_to :model
   belongs_to :office
 
+  rails_admin do
+    object_label_method do
+      :serial_number
+    end
+  end
+
   validates_presence_of :invoice_number, :serial_number, :purchased_date, :asset_type, :company, :model, :office
 
   def unassigned?
