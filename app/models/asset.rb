@@ -18,6 +18,7 @@ class Asset
   end
 
   validates_presence_of :invoice_number, :serial_number, :purchased_date, :asset_type, :company, :model, :office
+  validates_uniqueness_of :serial_number
 
   def unassigned?
     self.assignments.blank? || self.assignments.select{|a| a.current?}.blank?
