@@ -4,7 +4,7 @@ TwInventory::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   #root 'users#admin_dashboard'
-  root 'admin#index'
+  root 'users#employee_dashboard'
   get 'logout' => 'application#logout'
 
   get 'employee_dashboard' => 'users#employee_dashboard'#, :as => 'employee_dashboard_path'

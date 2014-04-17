@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter RubyCAS::Filter
   append_before_filter :authenticate
   append_before_filter :authorize!, :except => [:logout, :employee_dashboard]
-  before_filter :is_admin
+  before_filter :is_admin, :except => [:logout, :employee_dashboard]
   #helper_method :current_user
 
   def logout
