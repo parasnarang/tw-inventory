@@ -41,9 +41,11 @@
       %th Serial number
       %th Purchased date
       %th Asset type
+      %th Mac address
       %th Company
       %th Modal
       %th Office
+
     - if @assets.present?
       - @assets.all.each do |asset|
         %tr
@@ -56,12 +58,13 @@
           %td
             =asset.asset_type.name
           %td
+            =asset.mac_address
+          %td
             =asset.company.name
           %td
             =asset.model.name
           %td
             =asset.office.name
-
 .row-fluid
   %h3
     Assets with status updated
@@ -71,6 +74,7 @@
       %th Serial number
       %th Purchased date
       %th Asset type
+      %th Mac address
       %th Company
       %th Modal
       %th Office
@@ -85,6 +89,8 @@
             =asset.purchased_date
           %td
             =asset.asset_type.name
+          %td
+            =asset.mac_address
           %td
             =asset.company.name
           %td
