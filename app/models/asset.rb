@@ -7,7 +7,6 @@ class Asset
   field :purchased_date, type: Date
 
   belongs_to :asset_type
-  has_many :assignments
   belongs_to :company
   belongs_to :model
   belongs_to :office

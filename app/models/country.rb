@@ -1,7 +1,7 @@
 #class Country
 #  include Mongoid::Document
 #
-#  field :name
+#  field :name, type: String
 #
 #  validates :name, :presence => true
 #

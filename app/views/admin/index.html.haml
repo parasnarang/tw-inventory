@@ -3,6 +3,8 @@
     .well.sidebar-nav
       %ul.nav.nav-list
         %li.nav-header Navigation
+        %li{"data-model" => "admin"}
+          %a.pjax{href: "/admin/admin"} Admins
         %li{"data-model" => "asset"}
           %a.pjax{href: "/admin/asset"} Assets
         %li{"data-model" => "asset_type"}
@@ -15,8 +17,6 @@
           %a.pjax{href: "/admin/model"} Models
         %li{"data-model" => "office"}
           %a.pjax{href: "/admin/office"} Offices
-        %li{"data-model" => "user"}
-          %a.pjax{href: "/admin/user"} Users
         %li{"data-model" => "property"}
           %a.pjax{href: "/admin/property"} Properties
 
@@ -24,7 +24,6 @@
     #asset_details.jumbotron.tiles-container
       %ul.assets-tiles.thumbnails
         - AssetType.all.each do |asset_type|
-          - asset_unassigned_count = asset_type.unassigned_asset_count
           %li.tile.text-center
             %a.thumbnail{href: '/admin/asset_type/'+asset_type.id}
               .card
@@ -52,13 +51,13 @@
           %td
             =asset.purchased_date
           %td
-            =asset.asset_type.name
+            =asset.asset_type
           %td
-            =asset.company
+            =asset.company.name
           %td
-            =asset.model
+            =asset.model.name
           %td
-            =asset.office
+            =asset.office.name
 
 .row-fluid
   %h3
@@ -81,9 +80,9 @@
           %td
             =asset.asset_type.name
           %td
-            =asset.company
+            =asset.company.name
           %td
-            =asset.model
+            =asset.model.name
           %td
-            =asset.office
+            =asset.office.name
 
