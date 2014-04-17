@@ -6,6 +6,7 @@ class Asset
   field :serial_number
   field :purchased_date, type: Date
   field :mac_address
+  field :warranty
 
   belongs_to :asset_type
   belongs_to :company
@@ -18,7 +19,11 @@ class Asset
     end
   end
 
-  validates_presence_of :invoice_number, :serial_number, :purchased_date, :mac_address, :asset_type, :company, :model, :office
+  def warranty_enum
+    [['1 year'], ['2 year'], ['3 year']]
+  end
+
+  validates_presence_of :invoice_number, :serial_number, :purchased_date, :mac_address, :warranty, :asset_type, :company, :model, :office
   validates_uniqueness_of :serial_number
 
   def unassigned?
